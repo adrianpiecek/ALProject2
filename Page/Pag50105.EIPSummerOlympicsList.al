@@ -1,10 +1,10 @@
-page 50103 "Winter Olympics List" 
+page 50105 "Summer Olympics List" 
 
 {
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = WinterOlympics;
+    SourceTable = SummerOlympics;
     
     layout
     {
