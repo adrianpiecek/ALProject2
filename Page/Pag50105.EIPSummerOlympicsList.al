@@ -4,7 +4,7 @@ page 50105 "Summer Olympics List"
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = SummerOlympics;
+    SourceTable = SummerOlympic;
     
     layout
     {
