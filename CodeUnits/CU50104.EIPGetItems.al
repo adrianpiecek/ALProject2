@@ -10,8 +10,8 @@ codeunit 50104 GetItems
         ItemRec: Record Item;
         StrYear: Text;
         i: Integer;
-        WinterOlympicsRec: Record WinterOlympics;
-        SummerOlympicsRec: Record SummerOlympics;
+        WinterOlympicsRec: Record WinterOlympic;
+        SummerOlympicsRec: Record SummerOlympic;
 
     begin
         //czyszczenie tabel

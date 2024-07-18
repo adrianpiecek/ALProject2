@@ -4,7 +4,7 @@ page 50103 "Winter Olympics List"
     PageType = List;
     ApplicationArea = All;
     UsageCategory = Administration;
-    SourceTable = WinterOlympics;
+    SourceTable = WinterOlympic;
     
     layout
     {
