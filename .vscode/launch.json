@@ -1,23 +1,22 @@
 {
     "version": "0.2.0",
     "configurations": [
-
         {
             "name": "EIP cloud sandbox",
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
             "environmentName": "sandbox",
-            "startupObjectId": 50103,
+            "startupObjectId": 50107,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true,
             "enableSqlInformationDebugger": true,
-            "server":"http://EIP",
+            "server": "http://EIP",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "tenant": "default",
+            "tenant": "default"
         }
     ]
 }

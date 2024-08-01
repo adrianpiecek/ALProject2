@@ -6,7 +6,7 @@ table 50113 EIPCarBrand
     {
         field(1; "No."; Code[5])
         {
-
+            DataClassification = ToBeClassified;
         }
         field(2; Name; Text[20])
         {
@@ -24,6 +24,10 @@ table 50113 EIPCarBrand
             FieldClass = FlowField;
             Editable = false;
             CalcFormula = Count(EIPCarModel where(Brand = field(Name)));
+        }
+        field(5; "Number Series"; Code[10])
+        {
+            DataClassification = ToBeClassified;
         }
     }
 

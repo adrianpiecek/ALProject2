@@ -1,0 +1,19 @@
+kolejnosc od ostatniego do pierwszego
+Otwieranie strony typu Card:
+-OnFindRecord
+-OnOpenPage
+-OnInit
+Otwierdzanie strony typu List:
+-OnFindRecord
+-OnOpenPage
+-OnInit
+Dodawanie nowego rekordu:
+-AfterGetCurrRecord
+-OnNewRecord
+-OnOpenPage
+-OnInit
+Modyfikowanie Pola które jest częścią klucza głownego:
+
+Modyfikowanie Pola które nie jest częścią PK:
+
+Usuwanie rekordu:

@@ -2,6 +2,7 @@ table 50115 EIPCarModel
 {
     DataClassification = ToBeClassified;
 
+
     fields
     {
         field(1; "No."; Code[15])

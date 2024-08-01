@@ -39,6 +39,35 @@ page 50107 "EIP Olympics Info Card"
                 field("Post Code"; rec."Post Code")
                 {
                     ApplicationArea = All;
+                    /*trigger OnValidate()
+                    begin
+                        Message('OnValidate');
+                    end;
+
+                    trigger OnAfterLookup(Selected: RecordRef)
+                    begin
+                        Message('OnAfterLookup');
+                    end;
+
+                    trigger OnAssistEdit()
+                    begin
+                        Message('OnAssistEdit');
+                    end;
+
+                    trigger OnControlAddIn(Index: Integer; Data: Text)
+                    begin
+                        Message('OnControlAddIn');
+                    end;
+
+                    trigger OnDrillDown()
+                    begin
+                        Message('OnDrillDown');
+                    end;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        Message('OnLookup');
+                    end;*/
 
                 }
                 field("Country/Region Code"; rec."Country/Region Code")
@@ -66,10 +95,10 @@ page 50107 "EIP Olympics Info Card"
 
         area(FactBoxes)
         {
-            /*part(Attachments;)
+            part("Attached Media"; "EIP Olympic Picture")
             {
 
-            }*/
+            }
         }
     }
 
@@ -113,6 +142,7 @@ page 50107 "EIP Olympics Info Card"
             {
                 ApplicationArea = All;
                 Caption = 'Import Fun Fact';
+                Image = Import;
                 trigger OnAction()
                 var
                     FactFile: File;
@@ -121,11 +151,12 @@ page 50107 "EIP Olympics Info Card"
                     FileMgt: Codeunit "File Management";
                     FilePath: Text;
                     FactFileInStream: InStream;
-                    tempfilename: text;
+                    Buffor: text;
                 begin
-                    if File.UploadIntoStream('Select File', '', 'All Files (*.*)|*.*', tempfilename, FactFileInStream) then begin
-
-                        //rec."Fun Fact":=FactFileInStream;
+                    if File.UploadIntoStream('Select File', '', 'All Files (*.*)|*.*', Buffor, FactFileInStream) then begin
+                        FactFileInStream.ReadText(Buffor);
+                        Rec."Fun Fact" := Buffor;
+                        Rec.Modify();
                     end;
                 end;
 
@@ -158,6 +189,80 @@ page 50107 "EIP Olympics Info Card"
                 Rec.Year := SummerOlympics.Year;
                 Rec.Insert();
             until SummerOlympics.Next = 0;
+            CurrPage.Update();
         end;
     end;
+    /*
+        trigger OnAfterGetCurrRecord()
+        begin
+            Message('OnAfterGetCurrRecord');
+        end;
+
+        trigger OnAfterGetRecord()
+        begin
+            Message('OnAfterGetRecord');
+        end;
+
+        trigger OnClosePage()
+        begin
+            Message('OnClosePage');
+        end;
+
+        trigger OnDeleteRecord(): Boolean
+        begin
+            Message('OnDeleteRecord');
+        end;
+
+        trigger OnFindRecord(Which: Text): Boolean
+        begin
+            Message('OnFindRecord');
+        end;
+
+        trigger OnInit()
+        begin
+            Message('OnInit');
+        end;
+
+        trigger OnInsertRecord(BelowxRec: Boolean): Boolean
+        begin
+            Message('OnInsertRecord');
+        end;
+
+        trigger OnModifyRecord(): Boolean
+        begin
+            Message('OnModifyRecord');
+        end;
+
+        trigger OnNewRecord(BelowxRec: Boolean)
+        begin
+            Message('OnNewRecord');
+        end;
+
+        trigger OnNextRecord(Steps: Integer): Integer
+        begin
+            Message('OnNextRecord');
+        end;
+
+        trigger OnOpenPage()
+        begin
+            Message('OnOpenPage');
+        end;
+
+        trigger OnPageBackgroundTaskCompleted(TaskId: Integer; Results: Dictionary of [Text, Text])
+        begin
+            Message('OnPageBackgroundTaskCompleted');
+        end;
+
+        trigger OnPageBackgroundTaskError(TaskId: Integer; ErrorCode: Text; ErrorText: Text; ErrorCallStack: Text; var IsHandled: Boolean)
+        begin
+            Message('OnPageBackgroundTaskError');
+        end;
+
+        trigger OnQueryClosePage(CloseAction: Action): Boolean
+        begin
+            Message('OnQueryClosePage');
+        end;
+    */
+
+
 }

@@ -1,17 +1,16 @@
 table 50106 Olympic
 {
     DataClassification = ToBeClassified;
-    
+
     fields
     {
-        field(1;"No."; Code[20])
+        field(1; "No."; Code[20])
         {
             DataClassification = ToBeClassified;
-            
+
         }
-        field(2; Type; Option)
+        field(2; Type; Enum TypeEnum)
         {
-            OptionMembers = "Letnia","Zimowa";
             DataClassification = ToBeClassified;
         }
         field(3; Name; Text[250])
@@ -44,7 +43,7 @@ table 50106 Olympic
             DataClassification = ToBeClassified;
         }
     }
-    
+
     keys
     {
         key(Key1; "No.")
@@ -52,33 +51,34 @@ table 50106 Olympic
             Clustered = true;
         }
     }
-    
+
     fieldgroups
     {
         // Add changes to field groups here
     }
-    
+
     var
         myInt: Integer;
-    
+
     trigger OnInsert()
     begin
-        
+        Message('OnInsert');
     end;
-    
+
     trigger OnModify()
     begin
-        
+        Message('OnModify');
     end;
-    
+
     trigger OnDelete()
     begin
-        
+        Message('OnDelete');
     end;
-    
+
     trigger OnRename()
     begin
-        
+        Message('OnRename');
     end;
-    
+
+
 }

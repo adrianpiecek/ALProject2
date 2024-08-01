@@ -4,7 +4,7 @@ page 50108 "EIP Olympics Info List"
     ApplicationArea = All;
     UsageCategory = Lists;
     SourceTable = Olympic;
-    CardPageId = 50107;
+    CardPageId = "EIP Olympics Info Card";
 
 
     layout
@@ -15,7 +15,37 @@ page 50108 "EIP Olympics Info List"
             {
                 field("No."; rec."No.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = All;/*
+                    trigger OnValidate()
+                    begin
+                        Message('OnValidate');
+                    end;
+
+                    trigger OnAfterLookup(Selected: RecordRef)
+                    begin
+                        Message('OnAfterLookup');
+                    end;
+
+                    trigger OnAssistEdit()
+                    begin
+                        Message('OnAssistEdit');
+                    end;
+
+                    trigger OnControlAddIn(Index: Integer; Data: Text)
+                    begin
+                        Message('OnControlAddIn');
+                    end;
+
+                    trigger OnDrillDown()
+                    begin
+                        Message('OnDrillDown');
+                    end;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        Message('OnLookup');
+                    end;
+*/
 
                 }
                 field(Type; rec.Type)
@@ -41,7 +71,36 @@ page 50108 "EIP Olympics Info List"
                 field("Post Code"; rec."Post Code")
                 {
                     ApplicationArea = All;
+                    /*trigger OnValidate()
+                    begin
+                        Message('OnValidate');
+                    end;
 
+                    trigger OnAfterLookup(Selected: RecordRef)
+                    begin
+                        Message('OnAfterLookup');
+                    end;
+
+                    trigger OnAssistEdit()
+                    begin
+                        Message('OnAssistEdit');
+                    end;
+
+                    trigger OnControlAddIn(Index: Integer; Data: Text)
+                    begin
+                        Message('OnControlAddIn');
+                    end;
+
+                    trigger OnDrillDown()
+                    begin
+                        Message('OnDrillDown');
+                    end;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    begin
+                        Message('OnLookup');
+                    end;
+*/
                 }
                 field("Country/Region Code"; rec."Country/Region Code")
                 {
@@ -128,5 +187,12 @@ page 50108 "EIP Olympics Info List"
                 Rec.Insert();
             until SummerOlympics.Next = 0;
         end;
+        CurrPage.Update();
     end;
+
+    local procedure DeleteRecords()
+    begin
+
+    end;
+
 }
