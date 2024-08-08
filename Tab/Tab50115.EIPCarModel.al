@@ -13,6 +13,7 @@ table 50115 EIPCarModel
         field(2; Brand; Text[20])
         {
             DataClassification = ToBeClassified;
+            TableRelation = EIPCarBrand;
         }
         field(3; Code; Code[10])
         {
