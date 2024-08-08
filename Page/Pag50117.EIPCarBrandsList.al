@@ -2,16 +2,17 @@ page 50117 "EIP Car Brands List"
 {
     PageType = List;
     ApplicationArea = All;
-    UsageCategory = Administration;
+    UsageCategory = Lists;
     SourceTable = EIPCarBrand;
-    CardPageId = "EIP Car Brands List";
+    CardPageId = "EIP Car Brand Card";
+    Caption = 'Car Brands List';
 
 
     layout
     {
         area(Content)
         {
-            group(GroupName)
+            repeater(General)
             {
                 field("No."; Rec."No.")
                 {
@@ -60,6 +61,15 @@ page 50117 "EIP Car Brands List"
             {
                 ApplicationArea = All;
                 Image = Delete;
+
+                trigger OnAction()
+                var
+                    CarBrandRec: Record EIPCarBrand;
+                begin
+                    repeat
+                        CarBrandRec.Delete();
+                    until CarBrandRec.Next() = 0;
+                end;
             }
         }
     }
