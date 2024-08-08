@@ -16,7 +16,8 @@
             "server": "http://EIP",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "tenant": "default"
+            "tenant": "default",
+            "schemaUpdateMode": "ForceSync"
         }
     ]
 }

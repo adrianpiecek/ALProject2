@@ -1,4 +1,4 @@
-pageextension 50112 EIPPostedInvoiceManagment extends "Posted Sales Invoice"
+pageextension 50112 EIPPostedInvoiceManagment extends "Posted Sales Invoices"
 {
     actions
     {
@@ -18,6 +18,13 @@ pageextension 50112 EIPPostedInvoiceManagment extends "Posted Sales Invoice"
                 end;
             }
 
+        }
+        addlast(Category_Category4)
+        {
+            actionref("Show Invoice Details_Promoted"; "Show Invoice Details")
+            {
+
+            }
         }
     }
 }

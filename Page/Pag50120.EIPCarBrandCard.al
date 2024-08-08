@@ -1,10 +1,10 @@
-page 50120 "EIP Car Brands"
+page 50120 "EIP Car Brand Card"
 {
     ApplicationArea = All;
     Caption = 'EIP Car Brands';
     PageType = Card;
     SourceTable = EIPCarModel;
-    
+
     layout
     {
         area(Content)
@@ -12,7 +12,7 @@ page 50120 "EIP Car Brands"
             group(General)
             {
                 Caption = 'General';
-                
+
                 field("No."; Rec."No.")
                 {
                     ToolTip = 'Specifies the value of the No. field.', Comment = '%';

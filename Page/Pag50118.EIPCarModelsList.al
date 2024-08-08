@@ -4,6 +4,7 @@ page 50118 "EIP Car Models List"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = EIPCarModel;
+    CardPageId = "EIP Car Models Card";
 
     layout
     {

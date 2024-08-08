@@ -4,6 +4,8 @@ page 50117 "EIP Car Brands List"
     ApplicationArea = All;
     UsageCategory = Administration;
     SourceTable = EIPCarBrand;
+    CardPageId = "EIP Car Brands List";
+
 
     layout
     {
@@ -42,14 +44,22 @@ page 50117 "EIP Car Brands List"
     {
         area(Processing)
         {
-            action(ActionName)
+            action("Import from Excel")
             {
                 ApplicationArea = All;
+                Image = ImportExcel;
 
                 trigger OnAction()
+                var
+                    ImportCodeUnit: Codeunit EIPImportExcel;
                 begin
-
+                    ImportCodeUnit.ImportExcel();
                 end;
+            }
+            action("Drop Table")
+            {
+                ApplicationArea = All;
+                Image = Delete;
             }
         }
     }

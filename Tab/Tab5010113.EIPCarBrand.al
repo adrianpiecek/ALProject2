@@ -1,10 +1,10 @@
-table 50113 EIPCarBrand
+table 50100 EIPCarBrand
 {
     DataClassification = ToBeClassified;
 
     fields
     {
-        field(1; "No."; Code[5])
+        field(1; "No."; Code[15])
         {
             DataClassification = ToBeClassified;
         }
@@ -25,9 +25,10 @@ table 50113 EIPCarBrand
             Editable = false;
             CalcFormula = Count(EIPCarModel where(Brand = field(Name)));
         }
-        field(5; "Number Series"; Code[10])
+        field(5; "Number Series"; Code[20])
         {
             DataClassification = ToBeClassified;
+            TableRelation = "No. Series";
         }
     }
 
