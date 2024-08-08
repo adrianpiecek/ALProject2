@@ -1,4 +1,4 @@
-page 50119 "EIP Car Models Card"
+page 50119 "EIP Car Model Card"
 {
     ApplicationArea = All;
     Caption = 'EIP Car Models Card';
